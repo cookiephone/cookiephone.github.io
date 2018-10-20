@@ -1,6 +1,6 @@
 ## Cookiephone
 
-Hey, im Cookiephone. I'm a computer science student and I do some programming for fun. Projects that are currently maintained by me and which I believe are properly reflecting my abilities are visible on this page.
+Hey, im Cookiephone. I'm a computer science student and I do some programming for fun. Projects that are currently maintained by me and which I believe are properly reflecting my abilities are shown on this page.
 
 ### Markdown
 
