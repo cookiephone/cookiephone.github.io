@@ -56,6 +56,10 @@ a:hover {
   color: var(--anchor-color-hover);
 }
 
+hr {
+  border: 2px solid var(--color);
+}
+
 .container {
   width: 100%;
   padding-right: 15px;
