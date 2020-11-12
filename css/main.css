@@ -1,50 +1,101 @@
+:root {
+  --color: #e4e2ff;
+  --background-color: #0c0d16;
+  --text-color: #a0a0a0;
+  --text-subtle-color: #6f6974;
+  --anchor-color: #714cdf;
+  --anchor-color-hover: #4922bd;
+  --navbar-elem-color: #dbebfb;
+  --navbar-elem-color-hover: #9dbbfc;
+  --font-family-sans-serif: "Roboto";
+  --font-family-monospace: "Roboto Mono";
+}
+
+html {
+  font-family: var(--font-family-sans-serif);
+  line-height: 1.15;
+}
+
 body {
-  margin: 60px auto;
-  width: 70%;
+  margin: 0 50% 0 20%;
+  font-size: 1rem;
+  color: var(--color);
+  background-color: var(--background-color);
+  text-align: left;
 }
 
-nav ul, footer ul {
-  font-family: 'Helvetica', 'Arial', 'Sans-Serif';
-  padding: 0px;
-  list-style: none;
-  font-weight: bold;
-}
-
-nav ul li, footer ul li {
-  display: inline;
-  margin-right: 20px;
-}
-
-a {
-  text-decoration: none;
-  color: #999;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-h1 {
-  font-size: 3em;
-  font-family: 'Helvetica', 'Arial', 'Sans-Serif';
-}
-
-p {
-  font-size: 1.5em;
-  line-height: 1.4em;
-  color: #333;
+footer, header, nav {
+  display: block;
 }
 
 footer {
-  border-top: 1px solid #d5d5d5;
-  font-size: .8em;
+  margin-top: 180px;
 }
 
-ul.posts {
-  margin: 20px auto 40px;
-  font-size: 1.5em;
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: .5rem;
 }
 
-ul.posts li {
-  list-style: none;
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--anchor-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--anchor-color-hover);
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.headline {
+  margin-bottom: 80px;
+}
+
+.navbar-container {
+  margin: 20px 0 80px 0;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.navbar-elem {
+  padding: 1rem;
+  color: var(--navbar-elem-color);
+}
+
+.navbar-elem:hover {
+  color: var(--navbar-elem-color-hover);
+}
+
+.text-normal {
+  color: var(--text-color);
+}
+
+.text-subtle {
+  color: var(--text-subtle-color);
+}
+
+.text-mono {
+  font-family: var(--font-family-monospace);
 }
