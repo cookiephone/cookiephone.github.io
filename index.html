@@ -11,18 +11,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-    $(function(){
-      var includes = $("[data-include]")
-      $.each(includes, function() {
-        var file = "html/" + $(this).data("include") + ".html";
-        $(this).load(file);
-      })
-    })
-  </script>
-
-  <div data-include="icons"></div>
+  <!--#include file="html/icons.html" -->
 
 </head>
 
