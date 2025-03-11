@@ -1,6 +1,5 @@
 # node.js dependencies
 node_modules/
-package-lock.json
 
 # logs and temp files
 *.log

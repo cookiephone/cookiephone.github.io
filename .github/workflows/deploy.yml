@@ -1,0 +1,35 @@
+name: generate and deploy site
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+
+      - name: setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: install dependencies
+        run: npm ci
+
+      - name: build site
+        run: npm run build
+
+      - name: deploy
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan gh-pages
+          git --work-tree gen add --all
+          git --work-tree gen commit -m "deploy site"
+          git push origin HEAD:gh-pages --force
