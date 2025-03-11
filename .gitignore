@@ -5,3 +5,6 @@ node_modules/
 *.log
 .npm/
 .cache/
+
+# generated site
+gen/
