@@ -1,4 +1,4 @@
-# node.js dependencies
+# Node.js dependencies
 node_modules/
 
 # logs and temp files
@@ -8,3 +8,10 @@ node_modules/
 
 # generated site
 gen/
+
+# generated files in site source
+src/static/wasm
+
+# Rust
+Cargo.lock
+target/

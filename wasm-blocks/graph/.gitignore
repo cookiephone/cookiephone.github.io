@@ -1,0 +1,6 @@
+# Rust build files
+Cargo.lock
+target/
+
+# Rust WASM build files
+pkg/

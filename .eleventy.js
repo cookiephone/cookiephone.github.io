@@ -6,16 +6,14 @@ module.exports = function (eleventyConfig) {
     return moment(date).toISOString();
   });
  
-  eleventyConfig.addFilter('dateReadable', date => {
+  eleventyConfig.addFilter('dateReadableJp', date => {
     moment.locale('ja');
     return moment(date).utc().format('LL');
   });
 
   eleventyConfig.addShortcode('excerpt', article => extractExcerpt(article));
 
-  eleventyConfig.addPassthroughCopy("src/css");
-  eleventyConfig.addPassthroughCopy("src/images");
-  eleventyConfig.addPassthroughCopy("src/CNAME");
+  eleventyConfig.addPassthroughCopy({ 'src/static' : '/'});
 
   return {
     dir: {
