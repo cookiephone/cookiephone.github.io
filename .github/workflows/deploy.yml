@@ -1,0 +1,61 @@
+name: generate and deploy site
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+
+      - name: setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: setup Rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+      
+      - name: install wasm-pack
+        run: cargo install wasm-pack
+
+      - name: setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: install dependencies
+        run: |
+          npm ci
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+  
+      - name: setup target directory
+        run: mkdir -p gen
+
+      - name: initial build for sitegraph discovery
+        run: npm run build
+
+      - name: execute sitegraph discovery
+        run: python sitegraph.py gen sitegraph.json --vizdata
+
+      - name: build Rust WASM and integrate in site
+        run: python build_wasm.py
+
+      - name: build site
+        run: npm run build
+
+      - name: deploy
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan gh-pages
+          git --work-tree gen add --all
+          git --work-tree gen commit -m "deploy site"
+          git push origin HEAD:gh-pages --force

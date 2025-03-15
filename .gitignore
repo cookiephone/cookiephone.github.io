@@ -1,0 +1,20 @@
+# Node.js dependencies
+node_modules/
+
+# logs and temp files
+*.log
+.npm/
+.cache/
+
+# generated site
+gen/
+
+# generated files in site source
+src/static/wasm
+
+# Rust
+Cargo.lock
+target/
+
+# other generated files
+sitegraph.json
