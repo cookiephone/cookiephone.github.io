@@ -19,10 +19,11 @@ jobs:
           node-version: 18
           cache: 'npm'
 
-      - name: setup Rust for WASM
+      - name: setup Rust
         uses: actions-rust-lang/setup-rust-toolchain@v1
-        with:
-          components: wasm-pack
+      
+      - name: install wasm-pack
+        run: cargo install wasm-pack
 
       - name: setup Python
         uses: actions/setup-python@v4
