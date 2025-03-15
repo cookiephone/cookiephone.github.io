@@ -21,16 +21,6 @@ def main():
                 else:
                     shutil.copy2(item, dest)
         print('completed Rust WebAssembly build')
-        
-        print('install dependencies...')
-        subprocess.check_call(['npm', 'ci'], shell=True)
-
-        print('setup site target directory...')
-        subprocess.check_call(['mkdir', '-p', 'gen'])
-        
-        print('build static 11ty site...')
-        subprocess.check_call(['npm', 'run', 'build'], shell=True)
-
     except subprocess.CalledProcessError as e:
         print(f'error during build: {e}')
         exit(1)

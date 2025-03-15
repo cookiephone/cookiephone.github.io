@@ -30,8 +30,17 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: install dependencies
+        run: npm ci
+  
+      - name: setup target directory
+        run: mkdir -p gen
+
+      - name: build Rust WASM and integrate in site
+        run: python build_wasm.py
+
       - name: build site
-        run: python build.py
+        run: npm run build
 
       - name: deploy
         run: |
