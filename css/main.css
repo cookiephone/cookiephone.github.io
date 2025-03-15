@@ -1,0 +1,127 @@
+:root {
+    --color: #e4e2ff;
+    --background-color: #0c0d16;
+    --text-color: #a0a0a0;
+    --text-subtle-color: #8b8490;
+    --anchor-color: #8465e3;
+    --anchor-color-hover: #5632c3;
+    --navbar-elem-color: #dbebfb;
+    --navbar-elem-color-hover: #9dbbfc;
+    --font-family-sans-serif: "Roboto";
+    --font-family-monospace: "Roboto Mono";
+  }
+  
+  html {
+    font-family: var(--font-family-sans-serif);
+    line-height: 1.15;
+  }
+  
+  body {
+    margin: 0 50% 0 20%;
+    font-size: 1rem;
+    color: var(--color);
+    background-color: var(--background-color);
+    text-align: justify;
+  }
+  
+  footer, header, nav {
+    display: block;
+  }
+  
+  footer {
+    margin-top: 180px;
+    margin-bottom: 20px;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+  
+  a {
+    color: var(--anchor-color);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: var(--anchor-color-hover);
+  }
+
+  h1 a {
+    color: var(--color);
+  }
+  
+  hr {
+    border: 1.5px solid var(--color);
+  }
+
+  time {
+    color: var(--text-subtle-color);
+    font-family: var(--font-family-monospace);
+  }
+
+  .sitetitle {
+    font-size: 3.5rem;
+    line-height: 1.2;
+  }
+  
+  .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .headline {
+    margin-bottom: 20px;
+  }
+  
+  .navbar-container {
+    margin: 20px 0 80px 0;
+  }
+  
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  
+  .navbar-elem {
+    padding: 1rem;
+    color: var(--navbar-elem-color);
+  }
+  
+  .navbar-elem:hover {
+    color: var(--navbar-elem-color-hover);
+  }
+  
+  .text-normal {
+    color: var(--text-color);
+  }
+  
+  .text-subtle {
+    color: var(--text-subtle-color);
+  }
+  
+  .text-mono {
+    font-family: var(--font-family-monospace);
+  }
+  
+  .extra-space hr {
+    border: 3px solid var(--color);
+    margin-bottom: 80px;
+  }
+
+  #graph-canvas {
+    position: absolute;
+    left: 60%;
+    top: 10%;
+    width: 30%;
+  }
