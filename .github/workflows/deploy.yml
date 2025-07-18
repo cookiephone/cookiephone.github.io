@@ -18,35 +18,9 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
-
-      - name: setup Rust
-        uses: actions-rust-lang/setup-rust-toolchain@v1
-      
-      - name: install wasm-pack
-        run: cargo install wasm-pack
-
-      - name: setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: install dependencies
-        run: |
-          npm ci
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
   
       - name: setup target directory
         run: mkdir -p gen
-
-      - name: initial build for sitegraph discovery
-        run: npm run build
-
-      - name: execute sitegraph discovery
-        run: python sitegraph.py gen sitegraph.json --vizdata
-
-      - name: build Rust WASM and integrate in site
-        run: python build_wasm.py
 
       - name: build site
         run: npm run build

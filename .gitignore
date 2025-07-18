@@ -8,13 +8,3 @@ node_modules/
 
 # generated site
 gen/
-
-# generated files in site source
-src/static/wasm
-
-# Rust
-Cargo.lock
-target/
-
-# other generated files
-sitegraph.json
