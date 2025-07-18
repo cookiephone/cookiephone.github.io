@@ -49,15 +49,6 @@
 
     {{ content | safe }}
 
-    <canvas id="graph-canvas" width="500" height="500"></canvas>
-
-    <script type="module">
-      import init, { run } from "/wasm/graph/graph.js";
-      init().then(() => {
-        run();
-      });
-    </script>
-
   </main>
 
   <footer class="text-subtle">ベルンカストルの第一番ファンの独り言</footer>

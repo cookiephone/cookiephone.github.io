@@ -118,10 +118,3 @@
     border: 3px solid var(--color);
     margin-bottom: 80px;
   }
-
-  #graph-canvas {
-    position: absolute;
-    left: 60%;
-    top: 10%;
-    width: 30%;
-  }
