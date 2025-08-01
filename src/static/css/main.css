@@ -34,11 +34,8 @@
   }
   
   footer, header, nav {
-    display: block;
-  }
-
-  header {
     width: 100%;
+    display: block;
   }
   
   footer {
