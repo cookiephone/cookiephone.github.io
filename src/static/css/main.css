@@ -15,17 +15,30 @@
     font-family: var(--font-family-sans-serif);
     line-height: 1.15;
   }
+
+  .content {
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
   
   body {
-    margin: 0 50% 0 20%;
+    margin: 0;
     font-size: 1rem;
     color: var(--color);
     background-color: var(--background-color);
     text-align: justify;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   footer, header, nav {
     display: block;
+  }
+
+  header {
+    width: 100%;
   }
   
   footer {
@@ -72,10 +85,6 @@
   
   .container {
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
   }
   
   .headline {
@@ -117,4 +126,11 @@
   .extra-space hr {
     border: 3px solid var(--color);
     margin-bottom: 80px;
+  }
+
+  @media (min-width: 768px) {
+    .content {
+      padding-left: 20%;
+      padding-right: 50%;
+    }
   }
