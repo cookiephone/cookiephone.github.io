@@ -10,14 +10,17 @@ pagination:
   <a href="/" class="{% if page.url == '/' %}active{% endif %}">テキストのみ</a>
   <a href="/covers/" class="{% if page.url == '/covers/' %}active{% endif %}">画像つき</a>
 </nav>
-{% for post in posts %}
-  <article>
-    <div class="container headline">
-      <h1><a href="{{ post.url | url }}">{{ post.data.title }}</a></h1>
-      <hr>
+<div class="book-grid">
+  {% for post in posts %}
+    <article class="book-card">
+      <a href="{{ post.url | url }}">
+        {% if post.data.cover %}
+          <img src="{{ post.data.cover }}" alt="{{ post.data.title }} 表紙">
+        {% endif %}
+        <h2>{{ post.data.title }}</h2>
+      </a>
       <time datetime="{{ post.date | dateIso }}">{{ post.date | dateReadableJp }}</time>
       <p>{% excerpt post %}</p>
-      <a href="{{ post.url | url }}">続きを読む</a>
-    </div>
-  </article>
-{% endfor %}
+    </article>
+  {% endfor %}
+</div>

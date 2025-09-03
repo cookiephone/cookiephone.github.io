@@ -6,7 +6,8 @@
     --anchor-color: #8465e3;
     --anchor-color-hover: #5632c3;
     --navbar-elem-color: #dbebfb;
-    --navbar-elem-color-hover: #9dbbfc;
+    --navbar-elem-color-hover: #cec6e4;
+    --navbar-elem-color-active: #cec6e4;
     --font-family-sans-serif: 'Noto Serif JP', serif;
     --font-family-monospace: "Roboto Mono";
   }
@@ -123,6 +124,61 @@
   .extra-space hr {
     border: 3px solid var(--color);
     margin-bottom: 80px;
+  }
+
+  .view-switch {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .view-switch a {
+    color: inherit;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  .view-switch a:hover {
+    background-color: var(--navbar-elem-color-hover);
+    color: #333;
+  }
+
+  .view-switch a.active {
+    background-color: var(--navbar-elem-color-active);
+    color: #111;
+  }
+
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .book-card {
+    border-radius: 12px;
+    padding: 0.5rem;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+
+  .book-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .book-card img {
+    max-width: 120px;
+    margin-bottom: 0.75rem;
+    border-radius: 3px;
+  }
+
+  .book-card h2 {
+    font-size: 1.2rem;
+    color: var(--color);
   }
 
   @media (min-width: 768px) {
