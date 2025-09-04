@@ -6,10 +6,7 @@ pagination:
   reverse: true
   alias: posts
 ---
-<nav class="view-switch">
-  <a href="/" class="{% if page.url == '/' %}active{% endif %}">テキストのみ</a>
-  <a href="/covers/" class="{% if page.url == '/covers/' %}active{% endif %}">画像つき</a>
-</nav>
+{% include "view-switch.njk" %}
 {% for post in posts %}
   <article>
     <div class="container headline">

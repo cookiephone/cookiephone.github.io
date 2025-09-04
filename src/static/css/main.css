@@ -170,15 +170,25 @@
     transform: translateY(-3px);
   }
 
-  .book-card img {
-    max-width: 120px;
-    margin-bottom: 0.75rem;
+  .book-card-cover {
+    width: clamp(80px, 9vw, 160px);
+    overflow: hidden;
+    margin: 0 auto 0.75rem;
+  }
+
+  .book-card-cover img {
+    width: 100%;
     border-radius: 3px;
   }
 
   .book-card h2 {
     font-size: 1.2rem;
     color: var(--color);
+  }
+
+  .post-cover {
+    margin: 0 15px 15px 0;
+    border-radius: 3px;
   }
 
   @media (min-width: 768px) {

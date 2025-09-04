@@ -6,16 +6,15 @@ pagination:
   reverse: true
   alias: posts
 ---
-<nav class="view-switch">
-  <a href="/" class="{% if page.url == '/' %}active{% endif %}">テキストのみ</a>
-  <a href="/covers/" class="{% if page.url == '/covers/' %}active{% endif %}">画像つき</a>
-</nav>
+{% include "view-switch.njk" %}
 <div class="book-grid">
   {% for post in posts %}
     <article class="book-card">
       <a href="{{ post.url | url }}">
         {% if post.data.cover %}
-          <img src="{{ post.data.cover }}" alt="{{ post.data.title }} 表紙">
+          <div class="book-card-cover">
+            <img src="{{ post.data.cover }}" alt="{{ post.data.title }} 表紙" loading="lazy" decoding="async">
+          </div>
         {% endif %}
         <h2>{{ post.data.title }}</h2>
       </a>
